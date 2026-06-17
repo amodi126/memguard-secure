@@ -48,21 +48,35 @@ def extract_attack_outcomes(results: list[dict]) -> list[dict]:
     """
     Flatten results into per-attack outcomes.
     Returns list of {scenario, conv_id, attack_type, target, corrupted, voter_votes, voter_latency_ms}.
+
+    Uses attack_results_final for the 'corrupted' flag (end-of-conversation memory state)
+    and attack_results_per_turn for voter metadata (votes, latency, decision).
+    The per-turn corrupted flag only reflects whether the memory was wrong immediately
+    after the attack turn, missing corruption that occurs later in the conversation.
     """
     attacks = []
     for r in results:
-        # Use per-turn results if available (has voter data), else final results
-        atk_list = r.get("attack_results_per_turn", r.get("attack_results_final", []))
+        final = r.get("attack_results_final", [])
+        per_turn = r.get("attack_results_per_turn", [])
+
+        # Index per-turn entries by (type, target) for voter metadata
+        pt_lookup = {(a.get("type"), a.get("target")): a for a in per_turn}
+
+        # Final results are authoritative for end-state corruption; fall back to per-turn
+        atk_list = final if final else per_turn
+
         for atk in atk_list:
+            key = (atk.get("type"), atk.get("target"))
+            pt = pt_lookup.get(key, {})
             attacks.append({
                 "scenario": r.get("scenario", "unknown"),
                 "conv_id": r.get("conv_id", -1),
                 "attack_type": atk.get("type", "unknown"),
                 "target": atk.get("target", "unknown"),
-                "corrupted": atk.get("corrupted", False),
-                "voter_votes": atk.get("voter_votes", {}),
-                "voter_latency_ms": atk.get("voter_latency_ms"),
-                "voter_decision": atk.get("voter_decision"),
+                "corrupted": atk.get("corrupted", False),  # end-state from final
+                "voter_votes": pt.get("voter_votes", {}),  # richer metadata from per-turn
+                "voter_latency_ms": pt.get("voter_latency_ms"),
+                "voter_decision": pt.get("voter_decision"),
             })
     return attacks
 

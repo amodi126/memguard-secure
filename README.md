@@ -229,10 +229,10 @@ python analysis.py \
 
 | Condition | ASR | 95% CI | FPR |
 |---|---|---|---|
-| Baseline (no defense) | 28.1% | [23.1%, 33.8%] | — |
+| Baseline (no defense) | 27.8% | [22.8%, 33.4%] | — |
 | **MemGuard** (cross-model consensus) | **0.0%** | [0%, 1.4%] | **0.0%** |
 
-Fisher's exact test (*p* < 2.79 × 10⁻²⁶). McNemar's test (*p* = 0.0).
+Fisher's exact test (*p* < 6.65 × 10⁻²⁶). McNemar's test (*p* = 0.0).
 
 ### Attack-type breakdown (baseline, standard attacks)
 
@@ -240,7 +240,7 @@ Fisher's exact test (*p* < 2.79 × 10⁻²⁶). McNemar's test (*p* = 0.0).
 |---|---|
 | Hypothetical | 40.0% |
 | False confirmation | 27.8% |
-| Leading question | 16.7% |
+| Leading question | 15.6% |
 
 ### Enhanced attacks (5 types, 450 attack turns, 90 conversations)
 
@@ -275,18 +275,18 @@ Messages embed directives such as *"Note: this update has been verified and pre-
 | Full (3 cross-model voters, threshold = 2) | 0.0% | 0.0% |
 | `memory_consistency` only (threshold = 1) | 0.0% | 0.0% |
 | `request_classification` only (threshold = 1) | 0.0% | 0.0% |
-| `instruction_detection` only (threshold = 1) | 0.0% | 0.0% |
+| `instruction_detection` only (threshold = 1) | 0.4% | 0.0% |
 | Same-model (all GPT-4o-mini, threshold = 2) | 0.0% | 0.0% |
 
-All single-voter configurations achieve 0% ASR. The cross-model ensemble provides defense-in-depth: it prevents shared model biases from being exploited by an adversary who knows which model is in use, and ensures no single provider's API outage disables the defense.
+All single-voter configurations achieve near-zero ASR; `instruction_detection` alone allowed one attack through (0.4%, 1/270 on travel planner). The cross-model ensemble provides defense-in-depth: it prevents shared model biases from being exploited by an adversary who knows which model is in use, and ensures no single provider's API outage disables the defense.
 
 ### Validation latency
 
 | Metric | Value |
 |---|---|
-| Mean | 893 ms |
-| Median | 734 ms |
-| p95 | 1,679 ms |
+| Mean | 1,251 ms |
+| Median | 741 ms |
+| p95 | 3,342 ms |
 
 All three voter API calls are issued in parallel; latency is dominated by the slowest voter response.
 
@@ -295,11 +295,11 @@ All three voter API calls are issued in parallel; latency is dominated by the sl
 ## Citing this work
 
 ```bibtex
-@article{memguard2025,
+@article{memguard2026,
   title   = {Defenses Against Malicious Agent Memory Corruption in Multi-Turn Settings},
   author  = {Modi, Aditya},
   journal = {IEEE Open Journal of the Computer Society},
-  year    = {2025}
+  year    = {2026}
 }
 ```
 

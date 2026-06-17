@@ -217,11 +217,11 @@ echo "--- Phase 7: Statistical analysis ---"
 # Main analysis: standard attacks
 python analysis.py \
     --baseline results/baseline_30/ \
-    --defended results/defended_30/ \
-    --ablation results/ablation_memory_consistency/ \
-              results/ablation_request_classification/ \
-              results/ablation_instruction_detection/ \
-              results/ablation_same_model/ \
+    --defended results/defended_30_standard_hardened/ \
+    --ablation results/ablation_memory_consistency_hardened/ \
+              results/ablation_request_classification_hardened/ \
+              results/ablation_instruction_detection_hardened/ \
+              results/ablation_same_model_hardened/ \
     --output results/analysis_standard.json
 
 # Enhanced attacks analysis
