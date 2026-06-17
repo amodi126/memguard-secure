@@ -227,7 +227,11 @@ python analysis.py \
 # Enhanced attacks analysis
 python analysis.py \
     --baseline results/baseline_30_enhanced/ \
-    --defended results/defended_30_enhanced/ \
+    --defended results/defended_30_hardened/ \
+    --ablation results/ablation_memory_consistency_hardened/ \
+              results/ablation_request_classification_hardened/ \
+              results/ablation_instruction_detection_hardened/ \
+              results/ablation_same_model_hardened/ \
     --output results/analysis_enhanced.json
 
 echo ""

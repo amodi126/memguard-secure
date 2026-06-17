@@ -165,67 +165,67 @@
   "per_voter_accuracy": {
     "memory_consistency": {
       "accuracy": 1.0,
-      "correct": 80,
-      "total": 80,
+      "correct": 87,
+      "total": 87,
       "by_attack_type": {
         "hypothetical": {
           "accuracy": 1.0,
-          "correct": 43,
-          "total": 43
+          "correct": 46,
+          "total": 46
         },
         "false_confirmation": {
           "accuracy": 1.0,
-          "correct": 21,
-          "total": 21
+          "correct": 24,
+          "total": 24
         },
         "leading_question": {
           "accuracy": 1.0,
-          "correct": 16,
-          "total": 16
+          "correct": 17,
+          "total": 17
         }
       }
     },
     "request_classification": {
       "accuracy": 1.0,
-      "correct": 80,
-      "total": 80,
+      "correct": 87,
+      "total": 87,
       "by_attack_type": {
         "hypothetical": {
           "accuracy": 1.0,
-          "correct": 43,
-          "total": 43
+          "correct": 46,
+          "total": 46
         },
         "false_confirmation": {
           "accuracy": 1.0,
-          "correct": 21,
-          "total": 21
+          "correct": 24,
+          "total": 24
         },
         "leading_question": {
           "accuracy": 1.0,
-          "correct": 16,
-          "total": 16
+          "correct": 17,
+          "total": 17
         }
       }
     },
     "instruction_detection": {
       "accuracy": 1.0,
-      "correct": 80,
-      "total": 80,
+      "correct": 87,
+      "total": 87,
       "by_attack_type": {
         "hypothetical": {
           "accuracy": 1.0,
-          "correct": 43,
-          "total": 43
+          "correct": 46,
+          "total": 46
         },
         "false_confirmation": {
           "accuracy": 1.0,
-          "correct": 21,
-          "total": 21
+          "correct": 24,
+          "total": 24
         },
         "leading_question": {
           "accuracy": 1.0,
-          "correct": 16,
-          "total": 16
+          "correct": 17,
+          "total": 17
         }
       }
     }

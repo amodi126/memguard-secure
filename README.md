@@ -284,9 +284,9 @@ All single-voter configurations achieve near-zero ASR; `instruction_detection` a
 
 | Metric | Value |
 |---|---|
-| Mean | 1,251 ms |
-| Median | 741 ms |
-| p95 | 3,342 ms |
+| Mean | 844 ms |
+| Median | 684 ms |
+| p95 | 1,448 ms |
 
 All three voter API calls are issued in parallel; latency is dominated by the slowest voter response.
 
