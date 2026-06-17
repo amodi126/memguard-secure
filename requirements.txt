@@ -1,0 +1,17 @@
+# MemGuard-Secure dependencies
+# pip install -r requirements.txt
+
+# Letta client — talks to the Letta Docker server
+letta-client
+
+# OpenAI SDK — attack generator (GPT-4o) + consensus voters (GPT-4o-mini)
+openai
+
+# Used by the standalone simulation (existing memguard_secure experiments)
+pydantic
+matplotlib
+seaborn
+scipy
+numpy
+pytest
+httpx>=0.27

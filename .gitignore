@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+letta_eval/memguard/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# API keys — never commit real keys
+# Copy docker_inject/memguard_keys.example.json → docker_inject/memguard_keys.json and fill in your keys
+docker_inject/memguard_keys.json
+
+# Superseded experimental results (MemGuard middleware was not correctly deployed in these runs)
+letta_eval/results/defended_30/
+letta_eval/results/defended_30_enhanced/
+letta_eval/results/ablation_memory_consistency/
+letta_eval/results/ablation_request_classification/
+letta_eval/results/ablation_instruction_detection/
+letta_eval/results/ablation_same_model/
+letta_eval/results/voter_injection/
+letta_eval/results/adaptive_attacks/
+
+# Intermediate validation and single-conversation debug runs
+letta_eval/results/hardened_phase1/
+letta_eval/results/hardened_phase1_rerun/
+letta_eval/results/hardened_phase1_v2/
+letta_eval/results/hardened_phase1_voter_injection/
+letta_eval/results/single_conv_test/
+letta_eval/results/single_conv_test_v2/
+letta_eval/results/single_conv_test_v3/
+letta_eval/results/single_vi_test/
+
+# Temporary attack sets generated during validation/debugging
+letta_eval/attacks_phase1_validation/
+letta_eval/attacks_phase1_voter_injection/
+letta_eval/attacks_single_conv/
+letta_eval/attacks_single_vi/
+letta_eval/attacks_sanity/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Empty placeholder directories (tracked via .gitkeep if needed)
+tools/

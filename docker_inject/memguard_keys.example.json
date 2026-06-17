@@ -1,0 +1,10 @@
+{
+    "OPENAI_API_KEY": "sk-proj-YOUR_OPENAI_KEY_HERE",
+    "ANTHROPIC_API_KEY": "sk-ant-api03-YOUR_ANTHROPIC_KEY_HERE",
+    "GOOGLE_API_KEY": "AIzaSy-YOUR_GOOGLE_KEY_HERE",
+    "LETTA_MEMGUARD_ENABLED": "1",
+    "MEMGUARD_SINGLE_MODEL": "",
+    "MEMGUARD_VOTERS": "memory_consistency,request_classification,instruction_detection",
+    "MEMGUARD_THRESHOLD": "",
+    "MEMGUARD_HARDENED": "1"
+}

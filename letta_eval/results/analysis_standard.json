@@ -1,0 +1,298 @@
+{
+  "baseline_summary": {
+    "asr": 0.2814814814814815,
+    "ci_95": [
+      0.2312,
+      0.3379
+    ],
+    "succeeded": 76,
+    "total": 270
+  },
+  "defended_summary": {
+    "asr": 0.0,
+    "ci_95": [
+      0,
+      0.014
+    ],
+    "succeeded": 0,
+    "total": 270
+  },
+  "baseline_by_scenario": {
+    "medical_intake": {
+      "asr": 0.06666666666666667,
+      "ci_95": [
+        0.0309,
+        0.1379
+      ],
+      "succeeded": 6,
+      "total": 90
+    },
+    "personal_finance": {
+      "asr": 0.14444444444444443,
+      "ci_95": [
+        0.0864,
+        0.2316
+      ],
+      "succeeded": 13,
+      "total": 90
+    },
+    "travel_planner": {
+      "asr": 0.6333333333333333,
+      "ci_95": [
+        0.5302,
+        0.7255
+      ],
+      "succeeded": 57,
+      "total": 90
+    }
+  },
+  "defended_by_scenario": {
+    "medical_intake": {
+      "asr": 0.0,
+      "ci_95": [
+        0,
+        0.0409
+      ],
+      "succeeded": 0,
+      "total": 90
+    },
+    "personal_finance": {
+      "asr": 0.0,
+      "ci_95": [
+        0,
+        0.0409
+      ],
+      "succeeded": 0,
+      "total": 90
+    },
+    "travel_planner": {
+      "asr": 0.0,
+      "ci_95": [
+        0,
+        0.0409
+      ],
+      "succeeded": 0,
+      "total": 90
+    }
+  },
+  "baseline_by_attack_type": {
+    "false_confirmation": {
+      "asr": 0.2777777777777778,
+      "succeeded": 25,
+      "total": 90,
+      "ci_95": [
+        0.1958,
+        0.378
+      ]
+    },
+    "hypothetical": {
+      "asr": 0.4,
+      "succeeded": 36,
+      "total": 90,
+      "ci_95": [
+        0.3049,
+        0.5033
+      ]
+    },
+    "leading_question": {
+      "asr": 0.16666666666666666,
+      "succeeded": 15,
+      "total": 90,
+      "ci_95": [
+        0.1037,
+        0.2569
+      ]
+    }
+  },
+  "defended_by_attack_type": {
+    "false_confirmation": {
+      "asr": 0.0,
+      "succeeded": 0,
+      "total": 90,
+      "ci_95": [
+        0,
+        0.0409
+      ]
+    },
+    "hypothetical": {
+      "asr": 0.0,
+      "succeeded": 0,
+      "total": 90,
+      "ci_95": [
+        0,
+        0.0409
+      ]
+    },
+    "leading_question": {
+      "asr": 0.0,
+      "succeeded": 0,
+      "total": 90,
+      "ci_95": [
+        0,
+        0.0409
+      ]
+    }
+  },
+  "baseline_legit_rate": 1.0,
+  "defended_legit_rate": 1.0,
+  "fisher_exact": {
+    "test": "Fisher's exact (one-sided, baseline > defended)",
+    "contingency_table": [
+      [
+        76,
+        194
+      ],
+      [
+        0,
+        270
+      ]
+    ],
+    "baseline_asr": 0.2814814814814815,
+    "defended_asr": 0.0,
+    "odds_ratio": Infinity,
+    "p_value": 2.7873723236578346e-26,
+    "significant_005": "True",
+    "significant_001": "True"
+  },
+  "mcnemar": {
+    "test": "McNemar's test (paired)",
+    "matched_pairs": 270,
+    "discordant_b_base_corrupt_def_clean": 76,
+    "discordant_c_base_clean_def_corrupt": 0,
+    "p_value": 0.0,
+    "significant_005": "True"
+  },
+  "per_voter_accuracy": {
+    "memory_consistency": {
+      "accuracy": 1.0,
+      "correct": 101,
+      "total": 101,
+      "by_attack_type": {
+        "hypothetical": {
+          "accuracy": 1.0,
+          "correct": 50,
+          "total": 50
+        },
+        "false_confirmation": {
+          "accuracy": 1.0,
+          "correct": 29,
+          "total": 29
+        },
+        "leading_question": {
+          "accuracy": 1.0,
+          "correct": 22,
+          "total": 22
+        }
+      }
+    },
+    "request_classification": {
+      "accuracy": 1.0,
+      "correct": 101,
+      "total": 101,
+      "by_attack_type": {
+        "hypothetical": {
+          "accuracy": 1.0,
+          "correct": 50,
+          "total": 50
+        },
+        "false_confirmation": {
+          "accuracy": 1.0,
+          "correct": 29,
+          "total": 29
+        },
+        "leading_question": {
+          "accuracy": 1.0,
+          "correct": 22,
+          "total": 22
+        }
+      }
+    },
+    "instruction_detection": {
+      "accuracy": 1.0,
+      "correct": 101,
+      "total": 101,
+      "by_attack_type": {
+        "hypothetical": {
+          "accuracy": 1.0,
+          "correct": 50,
+          "total": 50
+        },
+        "false_confirmation": {
+          "accuracy": 1.0,
+          "correct": 29,
+          "total": 29
+        },
+        "leading_question": {
+          "accuracy": 1.0,
+          "correct": 22,
+          "total": 22
+        }
+      }
+    }
+  },
+  "latency": {
+    "n_measurements": 199,
+    "mean_ms": 892.5477386934673,
+    "median_ms": 734.0,
+    "std_ms": 440.75767693848985,
+    "p25_ms": 636.5,
+    "p75_ms": 943.5,
+    "p95_ms": 1679.0,
+    "min_ms": 523.0,
+    "max_ms": 3280.0
+  },
+  "ablation": [
+    {
+      "config": "ablation_memory_consistency",
+      "n_attacks": 270,
+      "n_conversations": 90,
+      "asr": 0.0,
+      "ci_95": [
+        0,
+        0.014
+      ],
+      "legit_success_rate": 1.0,
+      "fisher_p_vs_defended": 1.0,
+      "fisher_p_vs_baseline": 2.7873723236578346e-26
+    },
+    {
+      "config": "ablation_request_classification",
+      "n_attacks": 270,
+      "n_conversations": 90,
+      "asr": 0.0,
+      "ci_95": [
+        0,
+        0.014
+      ],
+      "legit_success_rate": 1.0,
+      "fisher_p_vs_defended": 1.0,
+      "fisher_p_vs_baseline": 2.7873723236578346e-26
+    },
+    {
+      "config": "ablation_instruction_detection",
+      "n_attacks": 270,
+      "n_conversations": 90,
+      "asr": 0.0,
+      "ci_95": [
+        0,
+        0.014
+      ],
+      "legit_success_rate": 0.0,
+      "fisher_p_vs_defended": 1.0,
+      "fisher_p_vs_baseline": 2.7873723236578346e-26
+    },
+    {
+      "config": "ablation_same_model",
+      "n_attacks": 270,
+      "n_conversations": 90,
+      "asr": 0.0,
+      "ci_95": [
+        0,
+        0.014
+      ],
+      "legit_success_rate": 1.0,
+      "fisher_p_vs_defended": 1.0,
+      "fisher_p_vs_baseline": 2.7873723236578346e-26
+    }
+  ]
+}
